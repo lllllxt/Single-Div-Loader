@@ -1,0 +1,327 @@
+@charset "UTF-8";
+/*简单文本动画*/
+@-webkit-keyframes loader-text {
+    25% {
+        content: '加载中.';
+    }
+    50% {
+        content: '加载中..';
+    }
+    75% {
+        content: '加载中...';
+    }
+}
+@keyframes loader-text {
+    25% {
+        content: '加载中.';
+    }
+    50% {
+        content: '加载中..';
+    }
+    75% {
+        content: '加载中...';
+    }
+}
+
+.loader-text {
+    width: 75px;
+}
+
+.loader-text:before {
+    content: '加载中';
+    -webkit-animation: loader-text .8s infinite;
+    animation: loader-text .8s infinite;
+}
+
+/*旋转*/
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/*普通圆圈loader*/
+.loader-round {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid rgba(128, 128, 128, 0.31);
+    border-left-color: gray;
+    -webkit-animation: rotate 1s linear infinite;
+    animation: rotate 1s linear infinite;
+}
+
+/*圆点放大颜色淡出*/
+@-webkit-keyframes loader-dot {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        background-color: rgb(128, 128, 128);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        background-color: rgba(128, 128, 128, 0);
+    }
+}
+@keyframes loader-dot {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        background-color: rgb(128, 128, 128);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        background-color: rgba(128, 128, 128, 0);
+    }
+}
+
+.loader-dot {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.loader-dot:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    background-color: rgb(128, 128, 128);
+    -webkit-animation: loader-dot 1s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: loader-dot 1s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/*伸缩 1-0*/
+@-webkit-keyframes scale-sm {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes scale-sm {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.loader-double-dot {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.loader-double-dot:before, .loader-double-dot:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    background-color: rgba(128, 128, 128, 0.6);
+    -webkit-animation: scale-sm 1.6s infinite ease-in-out;
+    animation: scale-sm 1.6s infinite ease-in-out;
+}
+
+.loader-double-dot:after {
+    -webkit-animation-delay: -.8s;
+    animation-delay: -.8s;
+}
+
+.loader-double-dot2 {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    -webkit-animation: rotate 1s linear infinite;
+    animation: rotate 1s linear infinite;
+}
+
+.loader-double-dot2:before, .loader-double-dot2:after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: rgba(128, 128, 128, 0.6);
+    -webkit-animation: scale-sm 1.6s infinite ease-in-out;
+    animation: scale-sm 1.6s infinite ease-in-out;
+}
+
+.loader-double-dot2:after {
+    -webkit-animation-delay: -.8s;
+    animation-delay: -.8s;
+}
+
+/*方形3D旋转*/
+@-webkit-keyframes loader-cube {
+    0% {
+        -webkit-transform:perspective(100px) rotateX(0deg) rotateY(0deg);
+        transform:perspective(100px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        -webkit-transform:perspective(100px)  rotateX(0deg) rotateY(180deg);
+        transform:perspective(100px)  rotateX(0deg) rotateY(180deg);
+    }
+    100% {
+        -webkit-transform:perspective(100px)  rotateX(-180deg) rotateY(180deg);
+        transform:perspective(100px)  rotateX(-180deg) rotateY(180deg);
+    }
+}
+@keyframes loader-cube {
+    0% {
+        -webkit-transform:perspective(100px) rotateX(0deg) rotateY(0deg);
+        transform:perspective(100px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        -webkit-transform:perspective(100px)  rotateX(0deg) rotateY(180deg);
+        transform:perspective(100px)  rotateX(0deg) rotateY(180deg);
+    }
+    100% {
+        -webkit-transform:perspective(100px)  rotateX(-180deg) rotateY(180deg);
+        transform:perspective(100px)  rotateX(-180deg) rotateY(180deg);
+    }
+}
+
+.loader-cube {
+    width: 30px;
+    height: 30px;
+}
+
+.loader-cube:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.6);
+    -webkit-animation:loader-cube 1.5s infinite ease-in-out;
+    animation:loader-cube 1.5s infinite ease-in-out;
+}
+
+/*方形位移、伸缩、旋转*/
+@-webkit-keyframes loader-double-cube-before {
+    0% {
+        -webkit-transform: translate(0, 0) scale(.8) rotate(0deg);
+        transform: translate(0, 0) scale(.8) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translate(100%, 0) scale(.5) rotate(90deg);
+        transform: translate(100%, 0) scale(.5) rotate(90deg);
+    }
+    100% {
+        -webkit-transform: translate(100%, 100%) scale(.8) rotate(180deg);
+        transform: translate(100%, 100%) scale(.8) rotate(180deg);
+    }
+}
+@-webkit-keyframes loader-double-cube-after {
+    0% {
+        -webkit-transform: translate(0, 0) scale(.8) rotate(0deg);
+        transform: translate(0, 0) scale(.8) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translate(-100%, 0) scale(.5) rotate(90deg);
+        transform: translate(-100%, 0) scale(.5) rotate(90deg);
+    }
+    100% {
+        -webkit-transform: translate(-100%, -100%) scale(.8) rotate(180deg);
+        transform: translate(-100%, -100%) scale(.8) rotate(180deg);
+    }
+}
+@keyframes loader-double-cube-before {
+    0% {
+        -webkit-transform: translate(0, 0) scale(.8) rotate(0deg);
+        transform: translate(0, 0) scale(.8) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translate(100%, 0) scale(.5) rotate(90deg);
+        transform: translate(100%, 0) scale(.5) rotate(90deg);
+    }
+    100% {
+        -webkit-transform: translate(100%, 100%) scale(.8) rotate(180deg);
+        transform: translate(100%, 100%) scale(.8) rotate(180deg);
+    }
+}
+@keyframes loader-double-cube-after {
+    0% {
+        -webkit-transform: translate(0, 0) scale(.8) rotate(0deg);
+        transform: translate(0, 0) scale(.8) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translate(-100%, 0) scale(.5) rotate(90deg);
+        transform: translate(-100%, 0) scale(.5) rotate(90deg);
+    }
+    100% {
+        -webkit-transform: translate(-100%, -100%) scale(.8) rotate(180deg);
+        transform: translate(-100%, -100%) scale(.8) rotate(180deg);
+    }
+}
+
+.loader-double-cube {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.loader-double-cube:before, .loader-double-cube:after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(128, 128, 128, 0.6);
+    -webkit-transform: scale(.8);
+    transform: scale(.8);
+}
+
+.loader-double-cube:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: loader-double-cube-before 1s infinite ease-in-out;
+    animation: loader-double-cube-before 1s infinite ease-in-out;
+}
+
+.loader-double-cube:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    -webkit-animation: loader-double-cube-after 1s infinite ease-in-out;
+    animation: loader-double-cube-after 1s infinite ease-in-out;
+}
