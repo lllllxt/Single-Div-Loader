@@ -26,7 +26,6 @@
 .loader-text {
     width: 75px;
 }
-
 .loader-text:before {
     content: '加载中';
     -webkit-animation: loader-text .8s infinite;
@@ -97,7 +96,6 @@
     width: 30px;
     height: 30px;
 }
-
 .loader-dot:before {
     content: "";
     display: inline-block;
@@ -147,7 +145,6 @@
     width: 30px;
     height: 30px;
 }
-
 .loader-double-dot:before, .loader-double-dot:after {
     content: "";
     display: inline-block;
@@ -161,7 +158,6 @@
     -webkit-animation: scale-sm 1.6s infinite ease-in-out;
     animation: scale-sm 1.6s infinite ease-in-out;
 }
-
 .loader-double-dot:after {
     -webkit-animation-delay: -.8s;
     animation-delay: -.8s;
@@ -174,7 +170,6 @@
     -webkit-animation: rotate 1s linear infinite;
     animation: rotate 1s linear infinite;
 }
-
 .loader-double-dot2:before, .loader-double-dot2:after {
     content: "";
     display: inline-block;
@@ -185,14 +180,13 @@
     -webkit-animation: scale-sm 1.6s infinite ease-in-out;
     animation: scale-sm 1.6s infinite ease-in-out;
 }
-
 .loader-double-dot2:after {
     -webkit-animation-delay: -.8s;
     animation-delay: -.8s;
 }
 
 /*方形3D旋转*/
-@-webkit-keyframes loader-cube {
+@-webkit-keyframes loader-square {
     0% {
         -webkit-transform:perspective(100px) rotateX(0deg) rotateY(0deg);
         transform:perspective(100px) rotateX(0deg) rotateY(0deg);
@@ -206,7 +200,7 @@
         transform:perspective(100px)  rotateX(-180deg) rotateY(180deg);
     }
 }
-@keyframes loader-cube {
+@keyframes loader-square {
     0% {
         -webkit-transform:perspective(100px) rotateX(0deg) rotateY(0deg);
         transform:perspective(100px) rotateX(0deg) rotateY(0deg);
@@ -221,23 +215,21 @@
     }
 }
 
-.loader-cube {
+.loader-square {
     width: 30px;
     height: 30px;
 }
-
-.loader-cube:before {
+.loader-square:before {
     content: "";
     display: block;
     width: 100%;
     height: 100%;
     background-color: rgba(128, 128, 128, 0.6);
-    -webkit-animation:loader-cube 1.5s infinite ease-in-out;
-    animation:loader-cube 1.5s infinite ease-in-out;
+    -webkit-animation:loader-square 1.5s infinite ease-in-out;
+    animation:loader-square 1.5s infinite ease-in-out;
 }
 
-/*方形位移、伸缩、旋转*/
-@-webkit-keyframes loader-double-cube-before {
+@-webkit-keyframes loader-double-square-before {
     0% {
         -webkit-transform: translate(0, 0) scale(.8) rotate(0deg);
         transform: translate(0, 0) scale(.8) rotate(0deg);
@@ -251,7 +243,7 @@
         transform: translate(100%, 100%) scale(.8) rotate(180deg);
     }
 }
-@-webkit-keyframes loader-double-cube-after {
+@-webkit-keyframes loader-double-square-after {
     0% {
         -webkit-transform: translate(0, 0) scale(.8) rotate(0deg);
         transform: translate(0, 0) scale(.8) rotate(0deg);
@@ -265,7 +257,7 @@
         transform: translate(-100%, -100%) scale(.8) rotate(180deg);
     }
 }
-@keyframes loader-double-cube-before {
+@keyframes loader-double-square-before {
     0% {
         -webkit-transform: translate(0, 0) scale(.8) rotate(0deg);
         transform: translate(0, 0) scale(.8) rotate(0deg);
@@ -279,7 +271,7 @@
         transform: translate(100%, 100%) scale(.8) rotate(180deg);
     }
 }
-@keyframes loader-double-cube-after {
+@keyframes loader-double-square-after {
     0% {
         -webkit-transform: translate(0, 0) scale(.8) rotate(0deg);
         transform: translate(0, 0) scale(.8) rotate(0deg);
@@ -294,13 +286,12 @@
     }
 }
 
-.loader-double-cube {
+.loader-double-square {
     position: relative;
     width: 60px;
     height: 60px;
 }
-
-.loader-double-cube:before, .loader-double-cube:after {
+.loader-double-square:before, .loader-double-square:after {
     content: "";
     display: inline-block;
     width: 30px;
@@ -309,19 +300,143 @@
     -webkit-transform: scale(.8);
     transform: scale(.8);
 }
-
-.loader-double-cube:before {
+.loader-double-square:before {
     position: absolute;
     top: 0;
     left: 0;
-    -webkit-animation: loader-double-cube-before 1s infinite ease-in-out;
-    animation: loader-double-cube-before 1s infinite ease-in-out;
+    -webkit-animation: loader-double-square-before 1s infinite ease-in-out;
+    animation: loader-double-square-before 1s infinite ease-in-out;
 }
-
-.loader-double-cube:after {
+.loader-double-square:after {
     position: absolute;
     right: 0;
     bottom: 0;
-    -webkit-animation: loader-double-cube-after 1s infinite ease-in-out;
-    animation: loader-double-cube-after 1s infinite ease-in-out;
+    -webkit-animation: loader-double-square-after 1s infinite ease-in-out;
+    animation: loader-double-square-after 1s infinite ease-in-out;
+}
+
+/*上下位移*/
+@-webkit-keyframes translate-up-dowm {
+    0%,50%,100%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    25%{
+        -webkit-transform: translateY(10%);
+        transform: translateY(10%);
+    }
+    75%{
+        -webkit-transform: translateY(-10%);
+        transform: translateY(-10%);
+    }
+}
+@keyframes translate-up-dowm {
+    0%,50%,100%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    25%{
+        -webkit-transform: translateY(10%);
+        transform: translateY(10%);
+    }
+    75%{
+        -webkit-transform: translateY(-10%);
+        transform: translateY(-10%);
+    }
+}
+.loader-rect {
+    position: relative;
+    width: 64px;
+    height: 30px;
+}
+.loader-rect:before, .loader-rect:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity:.6;
+    -webkit-animation:translate-up-dowm 2s ease infinite;
+    animation:translate-up-dowm 2s ease infinite;
+}
+.loader-rect:before{
+    background-image: -webkit-linear-gradient(to right, gray 6px, transparent 6px, transparent 16px,
+    gray 16px, gray 22px, transparent 22px, transparent 32px,
+    gray 32px, gray 38px, transparent 38px, transparent 48px,
+    gray 48px, gray 54px, transparent 54px, transparent 64px);
+    background-image: linear-gradient(to right, gray 6px, transparent 6px, transparent 16px,
+    gray 16px, gray 22px, transparent 22px, transparent 32px,
+    gray 32px, gray 38px, transparent 38px, transparent 48px,
+    gray 48px, gray 54px, transparent 54px, transparent 64px);
+}
+.loader-rect:after{
+    background-image:  -webkit-linear-gradient(to right, transparent 8px, gray 8px, gray 14px,
+    transparent 14px, transparent 24px, gray 24px, gray 30px,
+    transparent 30px, transparent 40px, gray 40px, gray 46px,
+    transparent 46px, transparent 56px, gray 56px, gray 62px,transparent 62px);
+    background-image: linear-gradient(to right, transparent 8px, gray 8px, gray 14px,
+    transparent 14px, transparent 24px, gray 24px, gray 30px,
+    transparent 30px, transparent 40px, gray 40px, gray 46px,
+    transparent 46px, transparent 56px, gray 56px, gray 62px,transparent 62px);
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+
+@-webkit-keyframes loader-rect2 {
+    0% {
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50% {
+        left: 100%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    100% {
+        left: 0;
+        -webkit-transform: rotate(720deg);
+        transform: rotate(720deg);
+    }
+}
+@keyframes loader-rect2 {
+    0% {
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    50% {
+        left: 100%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    100% {
+        left: 0;
+        -webkit-transform: rotate(720deg);
+        transform: rotate(720deg);
+    }
+}
+.loader-rect2 {
+    position: relative;
+    width: 60px;
+    height: 30px;
+}
+.loader-rect2:before,.loader-rect2:after{
+    content: "";
+    display: block;
+    width: 5px;
+    height: 30px;
+    background-color: rgba(128, 128, 128, 0.6);
+    position: absolute;
+    left: 0;
+    top:0;
+    -webkit-animation:loader-rect2 2s ease infinite;
+    animation:loader-rect2 2s ease infinite;
+}
+.loader-rect2:after {
+    background-color: rgba(128, 128, 128, 0.6);
+    -webkit-animation-delay:-1.5s;
+    animation-delay:-1.5s;
 }
